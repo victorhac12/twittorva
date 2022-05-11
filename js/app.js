@@ -1,7 +1,16 @@
+var url=window.location.href;
+var swLocation = '/twittorva/sw.js';
+
+
+
 //Registrar SW
 if(navigator.serviceWorker){
 
-    navigator.serviceWorker.register('/sw.js');
+    if (url.includes('localhost')){
+
+        swLocation = '/sw.js';
+    }
+    navigator.serviceWorker.register(swLocation);
     
 }
 
